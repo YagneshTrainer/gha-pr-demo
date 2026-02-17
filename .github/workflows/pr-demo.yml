@@ -1,0 +1,14 @@
+name: pr-basics demo
+
+
+on:
+    pull_request:
+
+
+jobs:
+    show-event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print event name
+              run: echo "This event was created by ${{ github.event_name }}"
+            
