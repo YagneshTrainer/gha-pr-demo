@@ -3,12 +3,16 @@ name: pr-basics demo
 
 on:
     pull_request:
+        types: [opened, synchronized, closed]
 
 
 jobs:
-    show-event:
+#    show-event:
+    Activity-check:
         runs-on: ubuntu-latest
         steps:
-            - name: print event name
-              run: echo "This event was created by ${{ github.event_name }}"
-            
+#            - name: print event name
+             - name: Print activity type
+#               run: echo "This event was created by ${{ github.event_name }}"
+               run: echo "Activity Type is ${{ github.event.action }}" 
+                           
